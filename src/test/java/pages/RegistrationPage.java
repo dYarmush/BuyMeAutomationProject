@@ -28,8 +28,8 @@ public class RegistrationPage extends BasePage {
      */
     private void login(){
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-        sendKeys(By.cssSelector("input[placeholder='מייל'"),"ozzy@ozzy.com");
-        sendKeys(By.cssSelector("input[placeholder='סיסמה'"),"Ozzy1234");
+        sendKeys(By.cssSelector("input[placeholder='מייל'"),"UN");
+        sendKeys(By.cssSelector("input[placeholder='סיסמה'"),"PW");
         clickOnElement(By.cssSelector("svg[xmlns='http://www.w3.org/2000/svg']"));
         clickOnElement(By.cssSelector("button[type='submit']"));
 
@@ -54,13 +54,13 @@ public class RegistrationPage extends BasePage {
         sendKeys(By.cssSelector("input[placeholder='שם פרטי'"),"Ozzy");
         Assert.assertEquals(getWebElement(By.cssSelector("input[placeholder='שם פרטי'")).getAttribute("value"),"Ozzy");
         //email
-        sendKeys(By.cssSelector("input[placeholder='מייל'"),"ozzy@ozzy.com");
-          Assert.assertEquals(getWebElement(By.cssSelector("input[placeholder='מייל'")).getAttribute("value"),"ozzy@ozzy.com");
+        sendKeys(By.cssSelector("input[placeholder='מייל'"),"EMAIL");
+          Assert.assertEquals(getWebElement(By.cssSelector("input[placeholder='מייל'")).getAttribute("value"),"EMAIL");
 //        //password
-       sendKeys(By.id("valPass"),"Ozzy1234");
+       sendKeys(By.id("valPass"),"PW");
 
 //        //verify PW
-       sendKeys(By.cssSelector("input[placeholder='אימות סיסמה'"),"Ozzy1234");
+       sendKeys(By.cssSelector("input[placeholder='אימות סיסמה'"),"PW");
 //        //Agreement
         clickOnElement(By.className("fill"));
 
