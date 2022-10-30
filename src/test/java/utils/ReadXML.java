@@ -14,6 +14,7 @@ public class ReadXML {
      * @return the requested value as a String
      * @throws Exception IO exception from the File
      */
+
     public static String getData (String keyName) throws Exception{
 
         ClassLoader classLoader = DriverSingleton.class.getClassLoader();

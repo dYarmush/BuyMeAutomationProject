@@ -27,7 +27,9 @@ public class Extras extends BasePage {
      * Needs the page to stop in order to do so. Must change the PageLoadStrategy.EAGER in the DriverSingleton to
      * PageLoadStrategy.NONE in order for the JS to stop the page.
      */
-    public static void printBallSize(){
+
+    public void Extras(){}
+    private static void printBallSize(){
         //in order to run have to change the chromeOptions to "PageLoadStrategy.NONE"
         driver.get("https://www.buyme.co.il");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("body")));
@@ -38,7 +40,7 @@ public class Extras extends BasePage {
     /**
      * Asserst alert message when trying to continue on login page without putting in any information.
      */
-    public void assertAlertMessage(){
+    private void assertAlertMessage(){
 //        try{ driver.get(ReadXML.getData("URL"));}
 //        catch (Exception e){}
         RegistrationPage reg=new RegistrationPage();
@@ -50,7 +52,7 @@ public class Extras extends BasePage {
     /**
      * Takes a screenshot of the bottom of the business page and adds it to the report.
      */
-    public void businessPageScreenShot(){
+    private void businessPageScreenShot(){
         try{  driver.get(ReadXML.getData("URL2"));}
         catch (Exception c){}
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
@@ -67,7 +69,7 @@ public class Extras extends BasePage {
     /**
      * Prints the text color of the "למי לשלוח" text from Send/Receive Page in both RGB and Hex.
      */
-    public void printTextColor(){
+    private void printTextColor(){
         try{        driver.get(ReadXML.getData("URL"));}
         catch(Exception e){}
         HomeScreen home = new HomeScreen();

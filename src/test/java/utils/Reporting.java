@@ -20,12 +20,13 @@ public class Reporting {
     private static WebDriver driver  = DriverSingleton.getDriverInstance();
     public static ExtentReports extent= new ExtentReports();
     public static ExtentTest test;
+    public static void Reporting(){}
 
     /**
      * Sets up the Extent Report and htmlReporter
      */
     @BeforeSuite
-    public static void setup() {
+       private static void setup() {
         ExtentSparkReporter htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir")+"\\extent.html");
         extent.attachReporter(htmlReporter);
     extent.setSystemInfo("Host Name", "Dovi");
@@ -37,7 +38,7 @@ public class Reporting {
      * @param result the test result
      */
     @AfterMethod
-    public void getResult(ITestResult result)
+    private void getResult(ITestResult result)
     {
         if(result.getStatus() == ITestResult.FAILURE)
         {
@@ -61,7 +62,7 @@ public class Reporting {
      * @param ImagesPath where should the image be saved.
      * @return the image path + .png
      */
-    public String takeScreenShot(WebDriver driver, String ImagesPath) {
+    String takeScreenShot(WebDriver driver, String ImagesPath) {
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
         File screenShotFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
         File destinationFile = new File(ImagesPath + ".png");
